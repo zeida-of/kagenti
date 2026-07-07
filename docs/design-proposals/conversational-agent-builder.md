@@ -72,6 +72,6 @@ The Conversational Agent Builder does not:
 - implement a new operator — the controller lives in the existing manager;
 - implement agent marketplace/sharing features;
 
-Let me know what you think of the idea, and if it fits into the Kagenti ecosystem!
-Do we want an authoring-plane component with Kagenti, or should we keep this external? 
+Let me know what you think of the idea, and how you think it fits into the Kagenti ecosystem!
+Do we want an authoring-plane component with Kagenti, or should we keep this external?
 Happy to answer any questions or elaborate more on design choices :) 
