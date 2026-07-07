@@ -1,7 +1,9 @@
 # Conversational Agent Builder for Kagenti — Proposal
 
 **Status:** Draft for review — seeking feedback on the direction
+
 **Date:** 2026-07-07
+
 **Author:** Zeid Houweling
 
 ---
