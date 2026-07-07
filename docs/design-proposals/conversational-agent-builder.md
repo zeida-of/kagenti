@@ -12,17 +12,13 @@ The creation paths, however, all assume someone technical: the code frameworks K
 and visual low-code tools, while useful, generate flow graphs that are difficult to review, diff, test, and promote through GitOps-style production controls. 
 What I couldn't find was a way for the people who know what an agent should do — but don't write "agent code" — to author one safely.
 
-While the platform offers integrations with Code frameworks
-(LangGraph, CrewAI), these tools serve developers; Visual low-code tools are useful, 
-but their generated flow graphs are often difficult to review, diff, test, and promote through GitOps-style production controls.
-
 Kagenti governs agents once they exist, but the current creation path still assumes a developer or platform engineer. 
 A Conversational Agent Builder would let domain experts safely produce reviewable, 
 versioned agent definitions without bypassing Kagenti’s security model.
 In regulated domains such as finance, the people who understand the rules, exceptions,
 and customer-facing behavior are often not the same people who can author LangGraph code, Kubernetes manifests, or MCP integration code.
 
-> This proposal was partly inspired by seeing how effectively business specialists could tune an agent when given an OpenClaw workspace with access to relevant knowledge sources and APIs.
+> This proposal was partly inspired by seeing how effectively business specialists in the FinTech industry could tune an agent when given an OpenClaw workspace with access to relevant knowledge sources and APIs.
 
 This proposal adds a **creation plane** to Kagenti for the declarative subset of agents:
 (system prompt + skills + MCP tools + knowledge). 
