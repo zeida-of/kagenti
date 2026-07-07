@@ -27,7 +27,7 @@ The CR would deploy a **conversational builder web app**. The Web App
 essentially becomes the users Agent IDE, where the user can describe the agent in chat; 
 the builder edits a validated spec, deploys previews, and promotes changes **as pull requests** to a git repository the
 Platform & AI Teams own. With a Git-based flow we can streamline CI and evals. 
-Merge to main is the only path to production. Built agents are ordinary Kagenti workloads 
+Merge to main is the only path to production. The Agents authored by the users are ordinary Kagenti workloads 
 (`AgentRuntime`-enrolled, existing skills and MCP conventions) — no new runtime primitives.
 
 Kagenti manages the full lifecycle of agents that already exist — enrollment,
