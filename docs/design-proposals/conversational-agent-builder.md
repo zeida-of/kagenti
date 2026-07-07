@@ -10,8 +10,7 @@
 
 I became interested in Kagenti while evaluating platforms for centralized governance, deployment,
 observability, and lifecycle management of AI agents. 
-The creation paths, however, all assume someone technical: the code frameworks Kagenti integrates with (LangGraph, CrewAI) serve developers,
-and visual low-code tools, while useful, generate flow graphs that are difficult to review, diff, test, and promote through GitOps-style production controls. 
+The creation paths, however, all assume someone technical: the code frameworks Kagenti integrates with (LangGraph, CrewAI) serve developers, and visual low-code tools, while useful, generate flow graphs that are difficult to review, diff, test, and promote through GitOps-style production controls. 
 What I couldn't find was a way for the people who know what an agent should do — but don't write "agent code" — to author one safely.
 
 Kagenti governs agents once they exist, but the current creation path still assumes a developer or platform engineer. 
@@ -20,23 +19,23 @@ versioned agent definitions without bypassing Kagenti’s security model.
 In regulated domains such as finance, the people who understand the rules, exceptions,
 and customer-facing behavior are often not the same people who can author LangGraph code, Kubernetes manifests, or MCP integration code.
 
-> This proposal was partly inspired by seeing how effectively business specialists in the FinTech industry could tune an agent when given an OpenClaw workspace with access to relevant knowledge sources and APIs.
+> This proposal was partly inspired by seeing how effectively business specialists in the FinTech industry could tune an agent when given an OpenClaw workspace with access to relevant knowledge sources and APIs. 
 
 This proposal adds a **creation plane** to Kagenti for the declarative subset of agents:
 (system prompt + skills + MCP tools + knowledge). 
 I'm proposing a new CR: `AgentBuilder` which would get reconciled by a flag-gated controller in the existing operator.
-The CR would deploy a **conversational builder web app**. The Web App 
-essentially becomes the users Agent IDE, where the user can describe the agent in chat; 
+The CR would deploy a **conversational builder web app** - An Agentic Agent Builder that extends Agent creation capabilities to End Users.
+
+The Web App essentially becomes the End Users Agent IDE, where the end user can describe the agent in chat; 
 the builder edits a validated spec, deploys previews, and promotes changes **as pull requests** to a git repository the
-Platform & AI Teams own. With a Git-based flow we can streamline CI and evals. 
-Merge to main is the only path to production. The Agents authored by the users are ordinary Kagenti workloads 
+Platform & AI Teams own. With a Git-based flow we can streamline CI, evals, Platform engineers and Agent Developers 
+will review familiar yamls and test or refine the agent further according to guidelines. 
+A merge to main is the only path to production. The Agents authored by the users are ordinary Kagenti workloads 
 (`AgentRuntime`-enrolled, existing skills and MCP conventions) — no new runtime primitives.
 
-Kagenti manages the full lifecycle of agents that already exist — enrollment,
-identity, discovery, observability, and an ops console to deploy,
-test, and monitor them. This is an addition to give users a lower easy barrier of entry, to use, 
-update and communicate their wants, through the very same platform that takes their agent to production. 
-The Conversational Agent Builder extends the End User Persona (the domain expert) to author AI Agents via a controlled flow.
+Kagenti already manages the lifecycle of agents once they exist: enrollment, identity, discovery, observability, and an operations console to deploy, test, and monitor them. The Conversational Agent Builder would extend this lifecycle upstream by giving domain experts a governed way to express, refine, and validate what an agent should do before it is promoted to production. Rather than requiring every agentic initiative to begin with engineering capacity, the builder provides a lower-barrier authoring path while preserving the controls, review process, and production standards that Kagenti is designed to enforce.
+
+In this model, business specialists can help shape agent behavior through a controlled flow, while engineering and platform teams continue to own the runtime, policy, deployment, and operational guardrails.
 
 I have a working prototype that runs on a kind cluster with Kagenti and GitHub integration. A demo is available on request.
 The Builder Agent and user created agents themselves run on the **Kagenti ADK** (`kagenti-adk`) on the same unified Runtime.
