@@ -32,13 +32,13 @@ Merge to main is the only path to production. The Agents authored by the users a
 
 Kagenti manages the full lifecycle of agents that already exist — enrollment,
 identity, discovery, observability, and an ops console to deploy,
-test, and monitor them. This is an addition to give users an easy barrier of entry, to use, 
+test, and monitor them. This is an addition to give users a lower easy barrier of entry, to use, 
 update and communicate their wants, through the very same platform that takes their agent to production. 
 The Conversational Agent Builder adds the missing persona (the domain expert) to a platform
 whose documented personas today all write code or operate infrastructure.
 
-A working prototype is already running on a kind cluster with Kagenti and GitHub integration. A demo is available on request.
-The deployed agents themselves run on the **Kagenti ADK** (`kagenti-adk`).
+I have a working prototype that runs on a kind cluster with Kagenti and GitHub integration. A demo is available on request.
+The Builder Agent and user created agents themselves run on the **Kagenti ADK** (`kagenti-adk`) on the same unified Runtime.
 I’d also be happy to join one of your meetups to discuss the proposal.
 
 
